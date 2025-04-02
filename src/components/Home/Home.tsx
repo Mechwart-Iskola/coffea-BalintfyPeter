@@ -1,15 +1,33 @@
-import React from 'react'
+import './home.css'
+import { homeImages } from '../../data/data'
 
 const Home = () => {
-    {/*A komponens megírásához szükséges css osztályokat a home.css-ben találod.*/}
-    
-  {/*A kép több másik képből tevődik össze ezeket egy tömbben találod a data mappában.*/}
+  {/*A komponens megírásához szükséges css osztályokat a home.css-ben találod.*/ }
 
-  {/*A kép hátterében egy alakzat van.*/}
+  {/*A kép több másik képből tevődik össze ezeket egy tömbben találod a data mappában.*/ }
 
-  {/*A gomb mutasson az about részre */}
+  {/*A kép hátterében egy alakzat van.*/ }
+
+  {/*A gomb mutasson az about részre */ }
   return (
-    <div>Home</div>
+    <div className='home'>
+      <h1 className='home__title'>COLD COFFEE</h1>
+      <div className='home__images'>
+        <div className='shape'></div>
+        {homeImages.map(image => (
+          <img src={image.src} alt={image.alt} className={image.className} />
+        ))}
+      </div>
+      <img src="/img/home-sticker.svg" alt="" className='home-Sticker' />
+      <div className='home__data'>
+        <p className='home__description'>
+          Find delicious hot and cold coffees with the
+          best varieties, calm the pleasure and enjoy
+          a good coffee, order now.
+        </p>
+        <a href="#about" className='button'>Learn More</a>
+      </div>
+    </div>
   )
 }
 
